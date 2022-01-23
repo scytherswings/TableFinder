@@ -1,0 +1,40 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-minitest
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - bin/**/*
+    - vendor/assets/**/*
+    - vendor/bundle/**/*
+    - node_modules/**/*
+    - tmp/**/*
+    - storage/**/*
+
+Rails:
+  Enabled: true
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - db/migrate/**/*
+
+Metrics/AbcSize:
+  Max: 25
+  Exclude:
+    - db/migrate/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 120
+  IgnoredPatterns: [ '\A#\s' ]
+  Exclude:
+    - Rakefile
+    - config/**/*
+    - lib/tasks/**/*
+    - test/test_helper.rb
+    - db/migrate/*
