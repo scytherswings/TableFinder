@@ -7,7 +7,7 @@ ruby '3.1.0'
 gem 'bootsnap', require: false
 gem 'cssbundling-rails'
 gem 'devise', '~> 4.8', '>= 4.8.0'
-gem 'filterrific', github: 'coffeejunk/filterrific',  branch: 'bump-rails-7'
+gem 'filterrific', github: 'coffeejunk/filterrific', branch: 'bump-rails-7'
 gem 'friendly_id', '~> 5.4'
 gem 'image_processing'
 gem 'jbuilder'
@@ -35,8 +35,8 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console'
   gem 'annotate'
+  gem 'web-console'
 end
 
 group :test do

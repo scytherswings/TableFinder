@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class TablesController < ApplicationController
-  before_action :set_table, only: %i[ show edit update destroy ]
+  before_action :set_table, only: %i[show edit update destroy]
 
   # GET /tables or /tables.json
   def index
@@ -7,8 +9,7 @@ class TablesController < ApplicationController
   end
 
   # GET /tables/1 or /tables/1.json
-  def show
-  end
+  def show; end
 
   # GET /tables/new
   def new
@@ -16,8 +17,7 @@ class TablesController < ApplicationController
   end
 
   # GET /tables/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /tables or /tables.json
   def create
@@ -25,7 +25,7 @@ class TablesController < ApplicationController
 
     respond_to do |format|
       if @table.save
-        format.html { redirect_to table_url(@table), notice: "Table was successfully created." }
+        format.html { redirect_to table_url(@table), notice: 'Table was successfully created.' }
         format.json { render :show, status: :created, location: @table }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class TablesController < ApplicationController
   def update
     respond_to do |format|
       if @table.update(table_params)
-        format.html { redirect_to table_url(@table), notice: "Table was successfully updated." }
+        format.html { redirect_to table_url(@table), notice: 'Table was successfully updated.' }
         format.json { render :show, status: :ok, location: @table }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class TablesController < ApplicationController
     @table.destroy
 
     respond_to do |format|
-      format.html { redirect_to tables_url, notice: "Table was successfully destroyed." }
+      format.html { redirect_to tables_url, notice: 'Table was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

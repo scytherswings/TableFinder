@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class GuestsController < ApplicationController
-  before_action :set_guest, only: %i[ show edit update destroy ]
+  before_action :set_guest, only: %i[show edit update destroy]
 
   # GET /guests or /guests.json
   def index
@@ -7,8 +9,7 @@ class GuestsController < ApplicationController
   end
 
   # GET /guests/1 or /guests/1.json
-  def show
-  end
+  def show; end
 
   # GET /guests/new
   def new
@@ -16,8 +17,7 @@ class GuestsController < ApplicationController
   end
 
   # GET /guests/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /guests or /guests.json
   def create
@@ -25,7 +25,7 @@ class GuestsController < ApplicationController
 
     respond_to do |format|
       if @guest.save
-        format.html { redirect_to guest_url(@guest), notice: "Guest was successfully created." }
+        format.html { redirect_to guest_url(@guest), notice: 'Guest was successfully created.' }
         format.json { render :show, status: :created, location: @guest }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class GuestsController < ApplicationController
   def update
     respond_to do |format|
       if @guest.update(guest_params)
-        format.html { redirect_to guest_url(@guest), notice: "Guest was successfully updated." }
+        format.html { redirect_to guest_url(@guest), notice: 'Guest was successfully updated.' }
         format.json { render :show, status: :ok, location: @guest }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class GuestsController < ApplicationController
     @guest.destroy
 
     respond_to do |format|
-      format.html { redirect_to guests_url, notice: "Guest was successfully destroyed." }
+      format.html { redirect_to guests_url, notice: 'Guest was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
