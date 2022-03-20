@@ -30,6 +30,9 @@ Metrics/AbcSize:
   Exclude:
     - db/migrate/**/*
 
+Naming/VariableNumber:
+  Enabled: false
+
 Style/Documentation:
   Enabled: false
 

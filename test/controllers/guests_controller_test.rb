@@ -20,8 +20,13 @@ class GuestsControllerTest < ActionDispatch::IntegrationTest
   test 'should create guest' do
     assert_difference('Guest.count') do
       post guests_url,
-           params: { guest: { address_1: @guest.address_1, address_2: @guest.address_2, city: @guest.city, email: @guest.email,
-                              name: @guest.name, post_code: @guest.post_code, state: @guest.state, table_id: @guest.table_id, title: @guest.title } }
+           params: {
+             guest: {
+               address_1: @guest.address_1, address_2: @guest.address_2, city: @guest.city,
+               email: @guest.email, name: @guest.name, post_code: @guest.post_code,
+               state: @guest.state, table_id: @guest.table_id, title: @guest.title
+             }
+           }
     end
 
     assert_redirected_to guest_url(Guest.last)
@@ -39,8 +44,13 @@ class GuestsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update guest' do
     patch guest_url(@guest),
-          params: { guest: { address_1: @guest.address_1, address_2: @guest.address_2, city: @guest.city, email: @guest.email,
-                             name: @guest.name, post_code: @guest.post_code, state: @guest.state, table_id: @guest.table_id, title: @guest.title } }
+          params: {
+            guest: {
+              address_1: @guest.address_1, address_2: @guest.address_2, city: @guest.city,
+              email: @guest.email, name: @guest.name, post_code: @guest.post_code,
+              state: @guest.state, table_id: @guest.table_id, title: @guest.title
+            }
+          }
     assert_redirected_to guest_url(@guest)
   end
 
