@@ -1,0 +1,75 @@
+<%= form_with(model: guest) do |form| %>
+  <% if guest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(guest.errors.count, "error") %> prohibited this guest from being saved:</h2>
+
+      <ul>
+        <% guest.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-md-1">
+      <%= form.label :title, class: 'form-label' %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="col-md-5">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12">
+      <%= form.label :email, class: 'form-label' %>
+      <%= form.text_field :email, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12">
+      <%= form.label :address_1, class: 'form-label' %>
+      <%= form.text_field :address_1, class: 'form-control' %>
+    </div>
+
+    <div class="col-xs-12">
+      <%= form.label :address_2, class: 'form-label' %>
+      <%= form.text_field :address_2, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :city, class: 'form-label' %>
+      <%= form.text_field :city, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :state, class: 'form-label' %>
+      <%= form.text_field :state, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :post_code, class: 'form-label' %>
+      <%= form.text_field :post_code, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :table_id, class: 'form-label' %>
+      <%= form.text_field :table_id, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <% if guest.persisted? %>
+      <div class="float-end">
+        <%= link_to 'Destroy', guest, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if guest.persisted? %>
+      <%= link_to "Cancel", guest, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", guests_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

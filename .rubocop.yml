@@ -21,6 +21,10 @@ Metrics/MethodLength:
   Exclude:
     - db/migrate/**/*
 
+Metrics/BlockLength:
+  Exclude:
+    - db/schema.rb
+
 Metrics/AbcSize:
   Max: 25
   Exclude:

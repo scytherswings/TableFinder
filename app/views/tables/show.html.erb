@@ -1,0 +1,18 @@
+<div class="page-header">
+  <%= link_to tables_path, class: 'btn btn-default' do %>
+    All Tables
+  <% end %>
+  <%= link_to edit_table_path(@table), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show table</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @table.name %></dd>
+  <dt>Number:</dt>
+  <dd><%= @table.number %></dd>
+  <dt>Description:</dt>
+  <dd><%= @table.description %></dd>
+</dl>

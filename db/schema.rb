@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_23_211725) do
+ActiveRecord::Schema.define(version: 2022_01_23_221743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,21 @@ ActiveRecord::Schema.define(version: 2022_01_23_211725) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
+  create_table "guests", force: :cascade do |t|
+    t.string "title"
+    t.string "name"
+    t.string "email"
+    t.string "address_1"
+    t.string "address_2"
+    t.string "city"
+    t.string "state"
+    t.string "post_code"
+    t.bigint "table_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["table_id"], name: "index_guests_on_table_id"
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.string "recipient_type", null: false
     t.bigint "recipient_id", null: false
@@ -89,6 +104,14 @@ ActiveRecord::Schema.define(version: 2022_01_23_211725) do
     t.index ["user_id"], name: "index_services_on_user_id"
   end
 
+  create_table "tables", force: :cascade do |t|
+    t.string "name"
+    t.integer "number"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -107,5 +130,6 @@ ActiveRecord::Schema.define(version: 2022_01_23_211725) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "guests", "tables"
   add_foreign_key "services", "users"
 end
