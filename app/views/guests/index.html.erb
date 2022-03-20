@@ -3,11 +3,13 @@
     <h1>Guests</h1>
   </div>
 
-  <div class="col-sm-6 text-end">
-    <%= link_to new_guest_path, class: 'btn btn-primary' do %>
-      Add New Guest
-    <% end %>
-  </div>
+  <% if user_signed_in? %>
+    <div class="col-sm-6 text-end">
+      <%= link_to new_guest_path, class: 'btn btn-primary' do %>
+        Add New Guest
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <div class="table-responsive">
