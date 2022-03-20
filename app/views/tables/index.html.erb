@@ -1,45 +1,33 @@
-
-
-
 <div class="row">
   <div class="col-sm-6">
     <h1>Tables</h1>
   </div>
 
   <div class="col-sm-6 text-end">
-  <%= link_to new_table_path, class: 'btn btn-primary' do %>
-    Add New Table
-  <% end %>
+    <%= link_to new_table_path, class: 'btn btn-primary' do %>
+      Add New Table
+    <% end %>
   </div>
 </div>
 
 <div class="table-responsive">
   <table class="table table-striped table-bordered table-hover">
     <thead>
-      <tr>
-    
-        <th>Name</th>
-    
-
-            <th>Number</th>
-            <th>Description</th>
-            
-      </tr>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
     </thead>
 
     <tbody>
-      <% @tables.each do |table| %>
-        <%= content_tag :tr, id: dom_id(table), class: dom_class(table) do %>
-          
-            <td><%= link_to table.name, table %></td>
-          
-
-                      <td><%= table.number %></td>
-                      <td><%= table.description %></td>
-          
-          
-        <% end %>
+    <% @tables.each do |table| %>
+      <%= content_tag :tr, id: dom_id(table), class: dom_class(table) do %>
+        <td><%= link_to table.name, table %></td>
+        <td><%= table.number %></td>
+        <td><%= table.description %></td>
       <% end %>
+    <% end %>
     </tbody>
   </table>
 </div>

@@ -4,7 +4,11 @@
   <div class="card-body">
     <% @announcements.each_with_index do |announcement, index| %>
       <% if index != 0 %>
-        <div class="row"><div class="col"><hr /></div></div>
+        <div class="row">
+          <div class="col">
+            <hr/>
+          </div>
+        </div>
       <% end %>
 
       <div class="row announcement" id="<%= dom_id(announcement) %>">
@@ -14,7 +18,8 @@
           <% end %>
         </div>
         <div class="col">
-          <strong class="<%= announcement_class(announcement.announcement_type) %>"><%= announcement.announcement_type.titleize %>:</strong>
+          <strong class="<%= announcement_class(announcement.announcement_type) %>"><%= announcement.announcement_type.titleize %>
+            :</strong>
           <strong><%= announcement.name %></strong>
           <%= simple_format announcement.description %>
         </div>

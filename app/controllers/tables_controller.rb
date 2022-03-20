@@ -58,13 +58,14 @@ class TablesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_table
-      @table = Table.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def table_params
-      params.require(:table).permit(:name, :number, :description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_table
+    @table = Table.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def table_params
+    params.require(:table).permit(:name, :number, :description)
+  end
 end
