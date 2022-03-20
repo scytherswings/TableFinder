@@ -16,5 +16,5 @@
 #  index_tables_on_number  (number) UNIQUE
 #
 class Table < ApplicationRecord
-  validates :number, presence: true, uniqueness: true
+  validates :number, presence: true, uniqueness: true, numericality: { greater_than_or_equal_to: 0 }
 end
