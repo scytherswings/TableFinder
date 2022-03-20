@@ -1,2 +1,7 @@
 @import 'bootstrap/scss/bootstrap';
 @import "jumpstart/announcements";
+
+// Some stupid rule that makes dumb looking borders between table rows
+.table > :not(:first-child) {
+  border-top: 0 !important;
+}
