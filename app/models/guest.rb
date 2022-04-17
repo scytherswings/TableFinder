@@ -27,4 +27,8 @@
 #
 class Guest < ApplicationRecord
   belongs_to :table
+
+  def full_name
+    title.present? ? "#{title} #{name}" : name
+  end
 end

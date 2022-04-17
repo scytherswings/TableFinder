@@ -17,13 +17,6 @@
     <thead>
     <tr>
       <th>Name</th>
-      <th>Title</th>
-      <th>Email</th>
-      <th>Address 1</th>
-      <th>Address 2</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Post code</th>
       <th>Table</th>
     </tr>
     </thead>
@@ -31,15 +24,8 @@
     <tbody>
     <% @guests.each do |guest| %>
       <%= content_tag :tr, id: dom_id(guest), class: dom_class(guest) do %>
-        <td><%= link_to guest.name, guest %></td>
-        <td><%= guest.title %></td>
-        <td><%= guest.email %></td>
-        <td><%= guest.address_1 %></td>
-        <td><%= guest.address_2 %></td>
-        <td><%= guest.city %></td>
-        <td><%= guest.state %></td>
-        <td><%= guest.post_code %></td>
-        <td><%= guest.table %></td>
+        <td><%= link_to guest.full_name, guest %></td>
+        <td><%= link_to guest.table.number, guest.table %></td>
       <% end %>
     <% end %>
     </tbody>
