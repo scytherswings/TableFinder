@@ -26,6 +26,8 @@
 #  fk_rails_...  (table_id => tables.id)
 #
 class Guest < ApplicationRecord
+  include PgSearch::Model
+
   belongs_to :table
 
   def full_name
