@@ -5,7 +5,8 @@ class GuestsController < ApplicationController
 
   # GET /guests or /guests.json
   def index
-    @guests = Guest.all
+    @q = Guest.ransack(params[:q])
+    @guests = @q.result(distinct: true)
   end
 
   # GET /guests/1 or /guests/1.json
