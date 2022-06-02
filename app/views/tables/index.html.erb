@@ -17,7 +17,7 @@
     <tr>
       <th>Table</th>
       <th>Name</th>
-      <th>Description</th>
+      <th>Guests</th>
     </tr>
     </thead>
 
@@ -26,7 +26,7 @@
       <%= content_tag :tr, id: dom_id(table), class: dom_class(table) do %>
         <td><%= table.number %></td>
         <td><%= link_to table.name, table %></td>
-        <td><%= table.description %></td>
+        <td><%= table.guests_count %></td>
       <% end %>
     <% end %>
     </tbody>

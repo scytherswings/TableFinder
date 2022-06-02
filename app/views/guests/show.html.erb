@@ -2,7 +2,7 @@
   <%= link_to guests_path, class: 'btn btn-secondary' do %>
     All Guests
   <% end %>
-  <%= link_to edit_guest_path(@guest), class: 'btn btn-primary' do %>
+  <%= link_to edit_guest_path(@guest), class: 'btn btn-primary' if user_signed_in? do %>
     Edit
   <% end %>
   <h1>Show guest</h1>

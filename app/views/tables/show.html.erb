@@ -6,7 +6,7 @@
     <%= link_to tables_path, class: 'btn btn-secondary' do %>
       All Tables
     <% end %>
-    <%= link_to edit_table_path(@table), class: 'btn btn-primary' do %>
+    <%= link_to edit_table_path(@table), class: 'btn btn-primary'  if user_signed_in? do %>
       Edit
     <% end %>
   </div>

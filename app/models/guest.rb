@@ -19,6 +19,6 @@
 #  fk_rails_...  (table_id => tables.id)
 #
 class Guest < ApplicationRecord
-  belongs_to :table
+  belongs_to :table, counter_cache: true
   validates :name, presence: true
 end
