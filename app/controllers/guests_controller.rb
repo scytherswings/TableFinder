@@ -15,6 +15,7 @@ class GuestsController < ApplicationController
   # GET /guests/new
   def new
     @guest = Guest.new
+    @tables = Table.all
   end
 
   # GET /guests/1/edit

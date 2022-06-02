@@ -13,7 +13,7 @@ class TablesController < ApplicationController
 
   # GET /tables/new
   def new
-    next_number = Table.maximum(:number) + 1
+    next_number = (Table.maximum(:number) || 0) + 1
     @table      = Table.new(name: "Table: #{next_number}", number: next_number)
   end
 

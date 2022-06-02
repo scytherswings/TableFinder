@@ -3,13 +3,7 @@
 # Table name: guests
 #
 #  id         :bigint           not null, primary key
-#  address_1  :string
-#  address_2  :string
-#  city       :string
-#  email      :string
 #  name       :string
-#  post_code  :string
-#  state      :string
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

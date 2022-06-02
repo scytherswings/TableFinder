@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mb-5">
   <div class="col-sm-6">
     <h1>Guests</h1>
   </div>
@@ -10,32 +10,40 @@
       <% end %>
     </div>
   <% end %>
-
-  <%= search_form_for @q do |f| %>
-
-    <%= f.label :name %>
-    <%= f.search_field :name %>
-
-    <%= f.submit %>
-  <% end %>
 </div>
 
-<div class="table-responsive">
-  <table class="table table-striped table-bordered table-hover">
-    <thead>
-    <tr>
-      <th>Name</th>
-      <th>Table</th>
-    </tr>
-    </thead>
+<div class="row">
+  <div class="col-sm-12 mb-3">
+    <%= search_form_for @q do |f| %>
+      <div class="input-group">
+        <%= f.search_field :name, placeholder: "Enter your name", class: 'form-control' %>
 
-    <tbody>
-    <% @guests.each do |guest| %>
-      <%= content_tag :tr, id: dom_id(guest), class: dom_class(guest) do %>
-        <td><%= link_to guest.full_name, guest %></td>
-        <td><%= link_to guest.table.number, guest.table %></td>
-      <% end %>
+        <%= f.submit class: 'btn btn-primary form-inline' %>
+      </div>
     <% end %>
-    </tbody>
-  </table>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Table</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <% @guests.each do |guest| %>
+          <%= content_tag :tr, id: dom_id(guest), class: dom_class(guest) do %>
+            <td><%= link_to guest.full_name, guest %></td>
+            <td><%= link_to guest.table.number, guest.table %></td>
+          <% end %>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
