@@ -16,8 +16,8 @@
   <div class="col-sm-12 mb-3">
     <%= search_form_for @q do |f| %>
       <div class="input-group">
-        <%= f.search_field :name, placeholder: "Enter your name", class: 'form-control' %>
-
+        <%= f.search_field :name_cont, placeholder: "Search your name", class: 'form-control' %>
+        <%= link_to "Clear", request.path, class:"btn btn-secondary" %>
         <%= f.submit class: 'btn btn-primary form-inline' %>
       </div>
     <% end %>
