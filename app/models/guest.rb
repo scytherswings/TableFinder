@@ -6,10 +6,9 @@
 #
 #  id         :bigint           not null, primary key
 #  name       :string
-#  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  table_id   :bigint           not null
+#  table_id   :bigint
 #
 # Indexes
 #
@@ -22,8 +21,4 @@
 class Guest < ApplicationRecord
   belongs_to :table
   validates :name, presence: true
-
-  def full_name
-    title.present? ? "#{title} #{name}" : name
-  end
 end

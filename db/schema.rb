@@ -64,9 +64,8 @@ ActiveRecord::Schema.define(version: 2022_01_23_221743) do
   end
 
   create_table "guests", force: :cascade do |t|
-    t.string "title"
     t.string "name"
-    t.bigint "table_id", null: false
+    t.bigint "table_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["table_id"], name: "index_guests_on_table_id"

@@ -5,8 +5,14 @@ class GuestsController < ApplicationController
 
   # GET /guests or /guests.json
   def index
-    @q      = Guest.ransack(params[:q])
-    @guests = @q.result(distinct: true)
+    if params[:show_all].blank? && params.dig(:q, :name_cont).blank?
+      @q      = Guest.ransack(params[:q])
+      @guests = Guest.none
+    else
+      @q      = Guest.ransack(params[:q])
+      @guests = @q.result(distinct: true).order(:name)
+    end
+
   end
 
   # GET /guests/1 or /guests/1.json

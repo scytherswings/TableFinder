@@ -1,18 +1,42 @@
-<div class="page-header">
-  <%= link_to tables_path, class: 'btn btn-default' do %>
-    All Tables
-  <% end %>
-  <%= link_to edit_table_path(@table), class: 'btn btn-primary' do %>
-    Edit
-  <% end %>
-  <h1>Show table</h1>
+<div class="row">
+  <div class="col">
+    <h1><%= @table.name %></h1>
+  </div>
+  <div class="page-header col text-end">
+    <%= link_to tables_path, class: 'btn btn-secondary' do %>
+      All Tables
+    <% end %>
+    <%= link_to edit_table_path(@table), class: 'btn btn-primary' do %>
+      Edit
+    <% end %>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col">
+    <div class="row">
+      <div class="col">
+        Number: <span class="badge bg-dark"><%= @table.number %></span>
+      </div>
+    </div>
+    <% if @table.description.present? %>
+      <div class="row">
+        <div class="col">
+          Description: <%= @table.description %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col">
+    <h2>Guests at this table:</h2>
+    <% @table.guests.each do |guest| %>
+      <div class="col-6">
+        <%= link_to guest.name, guest_path(guest) %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
-<dl class="dl-horizontal">
-  <dt>Name:</dt>
-  <dd><%= @table.name %></dd>
-  <dt>Number:</dt>
-  <dd><%= @table.number %></dd>
-  <dt>Description:</dt>
-  <dd><%= @table.description %></dd>
-</dl>
+
