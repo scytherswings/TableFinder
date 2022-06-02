@@ -1,7 +1,7 @@
 <%= form_with(model: guest) do |form| %>
   <% if guest.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(guest.errors.count, "error") %> prohibited this guest from being saved:</h2>
+    <div id="error_explanation" class="alert alert-danger" role="alert">
+      <h3><%= pluralize(guest.errors.count, "error") %> prohibited this guest from being saved:</h3>
 
       <ul>
         <% guest.errors.full_messages.each do |message| %>
@@ -24,7 +24,7 @@
   <div class="row">
     <div class="col-sm-6">
       <%= form.label :table_id, class: 'form-label' %>
-      <%= form.select :table_id, options_from_collection_for_select(@tables, :id, :name, form.object.table_id), {}, class: 'form-select' %>
+      <%= form.select :table_id, options_from_collection_for_select(Table.all, :id, :name, form.object.table_id), {}, class: 'form-select' %>
     </div>
   </div>
   <div class="row">

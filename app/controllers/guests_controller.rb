@@ -5,7 +5,7 @@ class GuestsController < ApplicationController
 
   # GET /guests or /guests.json
   def index
-    @q = Guest.ransack(params[:q])
+    @q      = Guest.ransack(params[:q])
     @guests = @q.result(distinct: true)
   end
 
@@ -15,7 +15,6 @@ class GuestsController < ApplicationController
   # GET /guests/new
   def new
     @guest = Guest.new
-    @tables = Table.all
   end
 
   # GET /guests/1/edit

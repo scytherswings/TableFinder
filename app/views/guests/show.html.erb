@@ -9,22 +9,13 @@
 </div>
 
 <dl class="dl-horizontal">
+  <dt>Display Name:</dt>
+  <dd><%= @guest.title %> <%= @guest.name %></dd>
+  <dt>Table:</dt>
+  <dd><%= link_to(@guest.table.name, table_path(@guest.table)) %></dd>
+  <br>
   <dt>Title:</dt>
   <dd><%= @guest.title %></dd>
   <dt>Name:</dt>
   <dd><%= @guest.name %></dd>
-  <dt>Email:</dt>
-  <dd><%= @guest.email %></dd>
-  <dt>Address 1:</dt>
-  <dd><%= @guest.address_1 %></dd>
-  <dt>Address 2:</dt>
-  <dd><%= @guest.address_2 %></dd>
-  <dt>City:</dt>
-  <dd><%= @guest.city %></dd>
-  <dt>State:</dt>
-  <dd><%= @guest.state %></dd>
-  <dt>Post code:</dt>
-  <dd><%= @guest.post_code %></dd>
-  <dt>Table:</dt>
-  <dd><%= @guest.table %></dd>
 </dl>

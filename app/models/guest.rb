@@ -21,6 +21,7 @@
 #
 class Guest < ApplicationRecord
   belongs_to :table
+  validates :name, presence: true
 
   def full_name
     title.present? ? "#{title} #{name}" : name
