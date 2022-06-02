@@ -1,14 +1,15 @@
 <div class="row">
-  <div class="col">
-    <h1><%= @table.name %></h1>
-  </div>
+
   <div class="page-header col text-end">
     <%= link_to tables_path, class: 'btn btn-secondary' do %>
       All Tables
     <% end %>
-    <%= link_to edit_table_path(@table), class: 'btn btn-primary'  if user_signed_in? do %>
-      Edit
-    <% end %>
+    <%= link_to "Edit", edit_table_path(@table), class: 'btn btn-primary' if user_signed_in? %>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <h1><%= @table.name %></h1>
   </div>
 </div>
 <div class="row mb-3">
@@ -16,6 +17,11 @@
     <div class="row">
       <div class="col">
         Number: <span class="badge bg-dark"><%= @table.number %></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        Guest count: <%= @table.guests_count %>
       </div>
     </div>
     <% if @table.description.present? %>
