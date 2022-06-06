@@ -6,7 +6,7 @@
 #  description  :text
 #  guests_count :integer          default(0), not null
 #  name         :string
-#  number       :integer          not null
+#  number       :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #

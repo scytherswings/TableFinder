@@ -8,7 +8,7 @@
 #  description  :text
 #  guests_count :integer          default(0), not null
 #  name         :string
-#  number       :integer          not null
+#  number       :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
@@ -18,5 +18,5 @@
 #
 class Table < ApplicationRecord
   has_many :guests, dependent: :nullify
-  validates :number, presence: true, uniqueness: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :number, uniqueness: true, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 end
